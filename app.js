@@ -28,7 +28,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/v1", routes);
-
+//app.use("/v1", routes) es un middleware que nos permite definir las rutas de nuestra API, para ello utilizamos express.Router() y definimos las rutas en un archivo aparte, en este caso v1.routes.js
 app.use(notFoundMiddleware);
 app.use(errorMiddleware);
  
