@@ -23,6 +23,9 @@ app.use(express.json());
 //esto nos permite recibir la informacion de un formulario HTML, para ello utilizamos express.urlencoded()
 app.use(express.urlencoded({ extended: true }));
 
+app.get("/", (req, res) => {
+  res.send("Respuesta del servidor a la raiz");
+});
 
 app.use("/v1", routes);
 
