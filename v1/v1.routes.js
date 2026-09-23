@@ -1,5 +1,6 @@
 import express from 'express';
 import authRouter from './routes/auth.routes.js';
+import uploadRouter from './routes/uploads.routes.js';
 import { authenticateMiddleware } from './middlewares/authenticate.middleware.js';
 import productosRouter from './routes/productos.routes.js';
 import dragonesRouter from './routes/dragones.routes.js';
@@ -19,6 +20,7 @@ router.use("/tesoros", tesorosRouter);
 
 router.use("/clima", climaRouter);
 router.use("/groq", groqRouter);
+router.use("/uploads", uploadRouter);
 
 //middleware para verificacion de token
 router.use(authenticateMiddleware);
