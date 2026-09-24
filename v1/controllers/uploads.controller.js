@@ -5,8 +5,10 @@ import { uploadBufferToCloudinary } from "../utils/cloudinary.util.js";
 
 export const subirImagen = async (req, res) => {
     try {
+        // Ejecuta el middleware de multer para procesar la subida del archivo almacenando en memoria (buffer)
+       
         await runMulterSingle(upload, "imagen", req, res);
-
+        //luego de que multer haya procesado la subida, el archivo estará disponible en req.file
         if (!req.file) {
             return res.status(400).json({ error: "No se subió ningún archivo" });
         }
